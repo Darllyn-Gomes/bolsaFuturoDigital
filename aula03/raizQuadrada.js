@@ -1,4 +1,4 @@
 // Raiz quadrada
-let numero = Math.sqrt(9)
+let numero = Math.sqrt(9);
 
-console.log(numero)
+console.log(numero);
