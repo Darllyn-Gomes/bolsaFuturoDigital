@@ -1,0 +1,14 @@
+let n1 =10
+let n2 =2
+
+let soma = n1 + n2
+console.log(`A soma ${n1} e ${n2} é igual ${soma}`);
+
+let subtracao = n1 - n2
+console.log(`A subtração ${n1} e ${n2} é igual ${subtracao}`);
+
+let multiplicacao = n1 * n2 
+console.log(`A mmultiplicação ${n1} e ${n2} é igual ${multiplicacao}`)
+
+let divisao = n1 / n2
+console.log(`A divisão ${n1} e ${n2} é igual ${divisao}`)
