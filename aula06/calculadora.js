@@ -22,7 +22,7 @@ switch (operador) {
             console.log('Resultado: ' + (numero1 / numero2));
             break;
         }
-        default:
+    default:
     console.log('Operador inválido. Por favor, use +, -, * ou /.');
-        break;
+            break;
 }
