@@ -1,10 +1,9 @@
 const readline = require('readline-sync');
 
-let ano = readline.questionInt('Digite o ano do seu nascimento');
-let idade = 2025 - ano;
+let idade = 17;
 
 if (idade >= 18) {
-    console.log('Você é maior de idade')
+  console.log('Você pode entrar na festa');
 } else {
-    console.log('Você é menor de idade')
+  console.log('Desculpe, você ainda não tem idade suficiente');
 }
