@@ -9,7 +9,7 @@ class Animal {
 
   // Método: um comportamento que o animal pode fazer.
   emitirSom() {
-    console.log("O animal emite um som.");
+    console.log("Os animais emitem som.");
   }
 
   comer() {
@@ -23,6 +23,7 @@ const meuGato = new Animal("Gato", "Miau", 2);
 
 // Acessando os atributos do objeto.
 console.log(`Meu cachorro se chama ${meuCachorro.nome} e tem ${meuCachorro.idade} anos.`);
+console.log(`Meu gato se chama ${meuGato.nome} e tem ${meuGato.idade} anos.`);
 
 // Chamando os métodos do objeto.
 meuCachorro.emitirSom();
