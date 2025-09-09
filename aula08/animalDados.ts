@@ -47,3 +47,7 @@ const gatos2 = new Gatos('Tigreal', 5, 'Felino', 'Rajado', 5.3, true);
 
 gatos1.miar();
 gatos2.arranhar();
+gatos1.comer();
+gatos2.pular();
+gatos1.ronronar();
+gatos2.cacar();
