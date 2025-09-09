@@ -44,9 +44,9 @@ class Pesssoa {
 const pesssoa1 = new Pesssoa('123.456.789-00', 'Ana', 29, 'Feminino', 1.65, 'Engenheira');
 
 // Testando os métodos
-pessoa1.falar();
-pessoa1.andar();
-pessoa1.trabalhar();
-pessoa1.comer();
-pessoa1.dormir();
-pessoa1.estudar();
+pesssoa1.falar();
+pesssoa1.andar();
+pesssoa1.trabalhar();
+pesssoa1.comer();
+pesssoa1.dormir();
+pesssoa1.estudar();
