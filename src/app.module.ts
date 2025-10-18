@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { FormaPagamentoModule } from './forma-pagamento/forma-pagamento.module'; // ← adicione esta linha
 
 @Module({
   imports: [
@@ -15,10 +16,11 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
         password: configService.get<string>('MYSQL_DB_PASSWORD'),
         database: configService.get<string>('MYSQL_DB_DATABASE'),
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
-        synchronize: false, // use false em produção
+        synchronize: false,
       }),
       inject: [ConfigService],
     }),
+    FormaPagamentoModule, // ← registre o módulo aqui
   ],
 })
 export class AppModule {}

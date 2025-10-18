@@ -10,24 +10,31 @@ export class FormaPagamentoService {
     private readonly formaPagamentoRepository: Repository<FormaPagamento>,
   ) {}
 
-  async criar(dados: Partial<FormaPagamento>): Promise<FormaPagamento> {
-    const novo = this.formaPagamentoRepository.create(dados);
-    return this.formaPagamentoRepository.save(novo);
+  async create(data: Partial<FormaPagamento>): Promise<FormaPagamento> {
+    const novoPagamento = this.formaPagamentoRepository.create(data);
+    return this.formaPagamentoRepository.save(novoPagamento);
   }
 
-  async listarTodos(): Promise<FormaPagamento[]> {
+  async findAll(): Promise<FormaPagamento[]> {
     return this.formaPagamentoRepository.find();
   }
 
-  async buscarPorId(id: number): Promise<FormaPagamento> {
-    const forma = await this.formaPagamentoRepository.findOneBy({ id });
-    if (!forma) {
-      throw new NotFoundException(`Forma de pagamento com ID ${id} não encontrada`);
+  async findOne(id: number): Promise<FormaPagamento> {
+    const pagamento = await this.formaPagamentoRepository.findOne({ where: { id } });
+    if (!pagamento) {
+      throw new NotFoundException(`Pagamento com ID ${id} não encontrado`);
     }
-    return forma;
+    return pagamento;
   }
 
-  async remover(id: number): Promise<void> {
-    await this.formaPagamentoRepository.delete(id);
+  async update(id: number, data: Partial<FormaPagamento>): Promise<FormaPagamento> {
+    const pagamento = await this.findOne(id);
+    Object.assign(pagamento, data);
+    return this.formaPagamentoRepository.save(pagamento);
+  }
+
+  async remove(id: number): Promise<void> {
+    const pagamento = await this.findOne(id);
+    await this.formaPagamentoRepository.remove(pagamento);
   }
 }

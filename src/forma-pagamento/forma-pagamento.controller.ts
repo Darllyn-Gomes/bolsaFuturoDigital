@@ -1,28 +1,44 @@
-import { Controller, Get, Post, Body, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  Patch,
+  Delete,
+} from '@nestjs/common';
 import { FormaPagamentoService } from './forma-pagamento.service';
 import { FormaPagamento } from './forma-pagamento.entity';
 
 @Controller('forma-pagamento')
 export class FormaPagamentoController {
-  constructor(private readonly service: FormaPagamentoService) {}
+  constructor(private readonly formaPagamentoService: FormaPagamentoService) {}
 
   @Post()
-  async criar(@Body() dados: Partial<FormaPagamento>): Promise<FormaPagamento> {
-    return this.service.criar(dados);
+  async create(@Body() data: Partial<FormaPagamento>): Promise<FormaPagamento> {
+    return this.formaPagamentoService.create(data);
   }
 
   @Get()
-  async listarTodos(): Promise<FormaPagamento[]> {
-    return this.service.listarTodos();
+  async findAll(): Promise<FormaPagamento[]> {
+    return this.formaPagamentoService.findAll();
   }
 
   @Get(':id')
-  async buscarPorId(@Param('id') id: number): Promise<FormaPagamento> {
-    return this.service.buscarPorId(id);
+  async findOne(@Param('id') id: string): Promise<FormaPagamento> {
+    return this.formaPagamentoService.findOne(Number(id));
+  }
+
+  @Patch(':id')
+  async update(
+    @Param('id') id: string,
+    @Body() data: Partial<FormaPagamento>,
+  ): Promise<FormaPagamento> {
+    return this.formaPagamentoService.update(Number(id), data);
   }
 
   @Delete(':id')
-  async remover(@Param('id') id: number): Promise<void> {
-    return this.service.remover(id);
+  async remove(@Param('id') id: string): Promise<void> {
+    return this.formaPagamentoService.remove(Number(id));
   }
 }
