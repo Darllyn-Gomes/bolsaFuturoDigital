@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@nestjs/config": "^4.0.2",
+    "@nestjs/jwt": "^11.0.1",
+    "bcrypt": "^6.0.0",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.10"
+  }
+}
