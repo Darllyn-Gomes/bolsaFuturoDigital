@@ -1,10 +1,12 @@
-import Cadastro from "./components/cadastro/cadastro";
+import React from "react";
+import Login from "./components/login/login";
 
 function App() {
   return (
-    <div>
-      <h1>Diário Pessoal</h1>
-      <Cadastro />
+    <div style={{ padding: "20px" }}>
+      <h1>Meu Projeto - Diário Pessoal</h1>
+      <hr style={{ margin: "40px 0" }} />
+      <Login />
     </div>
   );
 }
